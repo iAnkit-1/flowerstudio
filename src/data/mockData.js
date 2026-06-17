@@ -14,37 +14,37 @@ export const products = [
   // Fresh Flowers & Bouquets
   {
     id: 'f1',
-    name: 'Classic Red Roses Bouquet',
+    name: 'Artificial Red Flowers',
     category: 'bouquets',
-    price: 589,
+    price: 399,
     rating: 4.8,
     reviewsCount: 42,
     image: '/art_red_flower.jpg',
     images: [
       '/art_red_flower.jpg'
     ],
-    description: 'A gorgeous arrangement of 12 handpicked premium red roses wrapped in elegant craft paper. Perfect for expressing love and gratitude.',
-    features: ['12 Premium Red Roses', 'Gypsophila Fillers', 'Eco-friendly wrapping paper', 'Free message card included'],
+    description: 'Artificial red flowers for home decoration.',
+    features: ['Artificial Red Flowers', 'Premium artificial flowers', 'Eco-friendly wrapping paper', 'Free message card included'],
     inStock: true
   },
   {
     id: 'f2',
-    name: 'Symphony Mixed Lilies & Carnations',
+    name: 'Artificial Pink Roses',
     category: 'bouquets',
-    price: 899,
+    price: 499,
     rating: 4.7,
     reviewsCount: 28,
     image: '/art_pink_rose.png',
     images: [
       '/art_pink_rose.png'
     ],
-    description: 'An enchanting bouquet featuring aromatic white lilies, vibrant pink carnations, and matching seasonal greens.',
-    features: ['3 Asiatic Lilies', '8 Pink Carnations', 'Premium seasonal greens', 'Satin bow styling'],
+    description: 'Artificial pink roses for home decoration.',
+    features: ['Artificial Pink Roses', 'Premium artificial flowers', 'Eco-friendly wrapping paper', 'Free message card included'],
     inStock: true
   },
   {
     id: 'f3',
-    name: 'Sunshine Yellow Gerberas Arrangement',
+    name: 'Artificial Light Pink Roses',
     category: 'flowers',
     price: 499,
     rating: 4.6,
@@ -54,13 +54,13 @@ export const products = [
       '/art_lite_pink_rose_1.jpg',
       '/art_lite_pink_rose_2.jpg'
     ],
-    description: 'Bright and cheerful yellow gerberas arranged in a reusable glass vase, bringing sunny vibes to any desk or room.',
-    features: ['10 Yellow Gerberas', 'Glass Vase included', 'Fresh water preservation packet', 'Same-day delivery available'],
+    description: 'Artificial light pink roses for home decoration.',
+    features: ['Artificial Light Pink Roses', 'Premium artificial flowers', 'Eco-friendly wrapping paper', 'Free message card included'],
     inStock: true
   },
   {
     id: 'f4',
-    name: 'Blissful Pink Orchids Bunch',
+    name: 'Classic Red Roses Bouquet',
     category: 'flowers',
     price: 1199,
     rating: 4.9,
@@ -69,8 +69,8 @@ export const products = [
     images: [
       'classic_red_roses_bouquet.png'
     ],
-    description: 'Exotic and long-lasting pink orchid stalks in a classic wrapping. Symbolizes luxury, strength, and beauty.',
-    features: ['6 Pink Orchid Stems', 'Special moisturizing wrap', 'Deluxe double sheet packing', 'Long-lasting (up to 2 weeks)'],
+    description: 'A gorgeous arrangement of 12 handpicked premium red roses wrapped in elegant craft paper. Perfect for expressing love and gratitude.',
+    features: ['12 Premium Red Roses', 'Gypsophila Fillers', 'Eco-friendly wrapping paper', 'Free message card included'],
     inStock: true
   },
   

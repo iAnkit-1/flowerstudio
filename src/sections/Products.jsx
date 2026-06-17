@@ -335,7 +335,7 @@ export default function Products({ cart, onAddToCart, activeCategory, onSelectCa
 
 Please confirm my order.`;
 
-    const whatsappLink = `https://wa.me/919815493338?text=${encodeURIComponent(message)}`;
+    const whatsappLink = `https://wa.me/919335401435?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, '_blank');
     
     // Close modal
