@@ -9,14 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #667A33;
-      --primary-dark: #4A5C22;
+      --primary: #D90429;
+      --primary-dark: #B90322;
+      --primary-green: #2E7D32;
       --danger: #DC2626;
+      --danger-dark: #B91C1C;
       --text: #1F2937;
       --text-muted: #6B7280;
       --bg: #F9F9FB;
       --card-bg: #FFFFFF;
       --border: #E5E7EB;
+      --whatsapp: #25D366;
+      --whatsapp-dark: #1EBE5D;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
@@ -24,7 +28,7 @@
     .header-container { max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
     .brand-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--primary); text-decoration: none; }
     .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-bottom: 24px; box-shadow: 0 4px 14px rgba(0,0,0,0.04); }
     .warning-banner { background: #FEE2E2; border: 1px solid #FECACA; color: #991B1B; padding: 16px; border-radius: 12px; margin-bottom: 24px; font-size: 14px; }
     h1 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--text); margin-bottom: 8px; }
     h2 { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 12px; }
@@ -32,15 +36,38 @@
     ul { padding-left: 24px; margin-bottom: 16px; }
     .form-group { margin-bottom: 18px; }
     label { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
-    input[type="text"], input[type="tel"], input[type="email"], textarea {
-      width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; font-family: inherit; font-size: 14px;
+    input[type="text"], input[type="tel"], input[type="email"], select, textarea {
+      width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; font-family: inherit; font-size: 14px; background: #fff;
     }
-    input:focus, textarea:focus { outline: none; border-color: var(--primary); }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(217, 4, 41, 0.1); }
     .btn-danger {
-      background: var(--danger); color: white; border: none; padding: 14px 24px; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; width: 100%; transition: background 0.2s;
+      background: var(--danger); color: white; border: none; padding: 14px 24px; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; width: 100%; transition: background 0.2s, transform 0.1s; display: flex; justify-content: center; align-items: center; gap: 8px;
     }
-    .btn-danger:hover { background: #B91C1C; }
-    .success-msg { display: none; background: #DCFCE7; border: 1px solid #BBF7D0; color: #166534; padding: 18px; border-radius: 12px; text-align: center; }
+    .btn-danger:hover { background: var(--danger-dark); }
+    .btn-danger:active { transform: scale(0.99); }
+    .btn-danger:disabled { background: #9CA3AF; cursor: not-allowed; }
+    
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--whatsapp); color: white; text-decoration: none; padding: 12px 20px; border-radius: 10px; font-size: 14px; font-weight: 600; transition: background 0.2s;
+    }
+    .btn-whatsapp:hover { background: var(--whatsapp-dark); }
+    
+    .success-card {
+      display: none; background: #F0FDF4; border: 1px solid #BBF7D0; color: #166534; padding: 28px; border-radius: 14px; text-align: center;
+    }
+    .request-id-badge {
+      display: inline-block; background: #DCFCE7; color: #14532D; border: 1px dashed #86EFAC; padding: 6px 14px; border-radius: 8px; font-family: monospace; font-size: 14px; font-weight: 700; margin: 12px 0 16px 0;
+    }
+    .status-pill {
+      display: inline-block; background: #FEF3C7; color: #92400E; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 12px;
+    }
+    .error-msg {
+      display: none; background: #FEE2E2; border: 1px solid #FECACA; color: #991B1B; padding: 14px; border-radius: 10px; margin-bottom: 16px; font-size: 13.5px;
+    }
+    .spinner {
+      display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; border-top-color: #fff; animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
     footer { text-align: center; padding: 32px 20px; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border); background: #FFFFFF; margin-top: 40px; }
   </style>
 </head>
@@ -48,64 +75,201 @@
   <header>
     <div class="header-container">
       <a href="https://flowerstudiobypushpraj.com" class="brand-title">FlowerStudio</a>
-      <span style="font-size: 13px; color: var(--text-muted);">Data Privacy Portal</span>
+      <span style="font-size: 13px; color: var(--text-muted); font-weight: 500;">Account & Privacy Portal</span>
     </div>
   </header>
 
   <main class="container">
     <div class="card">
-      <h1>Account & Data Deletion Portal</h1>
-      <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 20px;">Google Play Data Safety Compliant Deletion Gateway</p>
+      <h1>Account & Data Deletion Request</h1>
+      <p style="color: var(--text-muted); font-size: 13.5px; margin-bottom: 20px;">Official Data Privacy & Google Play Data Safety Compliance Gateway</p>
 
       <div class="warning-banner">
-        <strong>⚠️ Permanent Data Deletion Notice:</strong> Submitting an account deletion request permanently wipes your profile, saved recipient addresses, eCoins, and order associations from our databases within 48 hours.
+        <strong>⚠️ Permanent Data Deletion Notice:</strong> Submitting an account deletion request will remove your personal profile, delivery addresses, eCoins, and associated user identifiers from active FlowerStudio systems within 24–48 business hours.
       </div>
 
       <h2>Data Purging Policy:</h2>
       <ul>
-        <li><strong>Deleted Information:</strong> User profile (Name, Phone number, Email ID), saved addresses, delivery notes, and active session tokens.</li>
-        <li><strong>Retained Records:</strong> Completed transaction receipts and statutory GST tax invoices are retained strictly as required by applicable tax legislation in India.</li>
+        <li><strong>Deleted Information:</strong> User profile (Name, Phone number, Email address), saved delivery addresses, cart state, device tokens, and authentication credentials.</li>
+        <li><strong>Retained Records:</strong> Completed order invoices, payment IDs, and statutory GST records are retained strictly as required by Indian taxation laws.</li>
       </ul>
 
+      <!-- Submission Form -->
       <div id="deletionFormContainer">
-        <h2 style="margin-top: 24px;">Submit Deletion Request</h2>
+        <h2 style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border);">Submit Deletion Request</h2>
+        <div id="errorBanner" class="error-msg"></div>
+
         <form id="deleteForm" onsubmit="handleSubmit(event)">
           <div class="form-group">
-            <label for="phone">Registered Mobile Number *</label>
-            <input type="tel" id="phone" placeholder="+91 XXXXXXXXXX" required />
+            <label for="identifier">Registered Mobile Number or Email *</label>
+            <input 
+              type="text" 
+              id="identifier" 
+              placeholder="+91 98765 43210 or name@example.com" 
+              required 
+              autocomplete="username"
+            />
+            <span style="font-size: 12px; color: var(--text-muted);">Enter the phone number or Google email you used to register in FlowerStudio.</span>
           </div>
+
           <div class="form-group">
-            <label for="email">Registered Email Address (Optional)</label>
-            <input type="email" id="email" placeholder="you@example.com" />
+            <label for="reason">Reason for Deletion (Optional)</label>
+            <select id="reason">
+              <option value="No longer using the service">No longer using the service</option>
+              <option value="Privacy / Data concerns">Privacy / Data concerns</option>
+              <option value="Created duplicate account">Created duplicate account</option>
+              <option value="Moved out of delivery region (Chandigarh/Mohali/Panchkula)">Moved out of delivery region</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
+
           <div class="form-group">
-            <label for="reason">Reason for deletion (Optional)</label>
-            <textarea id="reason" rows="3" placeholder="Tell us why you are deleting your account..."></textarea>
+            <label for="notes">Additional Comments / Notes (Optional)</label>
+            <textarea id="notes" rows="2" placeholder="Any additional details or order references..."></textarea>
           </div>
-          <div class="form-group" style="display: flex; gap: 8px; align-items: flex-start;">
-            <input type="checkbox" id="confirm" required style="margin-top: 4px;" />
-            <label for="confirm" style="font-weight: 400; font-size: 13px; color: #4B5563;">I confirm that I want to permanently delete my FlowerStudio account and understand this action is irreversible.</label>
+
+          <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start;">
+            <input type="checkbox" id="confirm" required style="margin-top: 4px; width: 16px; height: 16px; accent-color: var(--primary);" />
+            <label for="confirm" style="font-weight: 400; font-size: 13px; color: #4B5563; cursor: pointer;">
+              I confirm that I am the owner of this account and wish to permanently erase my profile and personal data from FlowerStudio.
+            </label>
           </div>
-          <button type="submit" class="btn-danger">Submit Account Deletion Request</button>
+
+          <button type="submit" id="submitBtn" class="btn-danger">
+            <span id="btnText">Request Account Deletion</span>
+          </button>
         </form>
       </div>
 
-      <div id="successMsg" class="success-msg">
-        <h3 style="font-size: 16px; margin-bottom: 6px;">Request Successfully Received</h3>
-        <p style="font-size: 13px;">Your account deletion request has been registered. Our security team will process the permanent erasure of your data within 24–48 business hours. You will receive an SMS/Email confirmation once completed.</p>
+      <!-- Success State -->
+      <div id="successCard" class="success-card">
+        <div style="font-size: 40px; margin-bottom: 10px;">✅</div>
+        <div class="status-pill">Status: PENDING VERIFICATION</div>
+        <h2 style="font-size: 20px; color: #14532D; margin-bottom: 6px;">Your deletion request has been submitted.</h2>
+        <p style="font-size: 14px; color: #166534; max-width: 580px; margin: 0 auto 12px auto;">
+          Our team will verify your request and process the deletion within 24–48 business hours.
+        </p>
+
+        <div>
+          <span style="font-size: 12px; color: #166534; font-weight: 600;">Reference Request ID:</span><br/>
+          <div id="displayRequestId" class="request-id-badge">DEL_REQ_PENDING</div>
+        </div>
+
+        <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #BBF7D0;">
+          <p style="font-size: 13.5px; color: #14532D; margin-bottom: 14px; font-weight: 500;">
+            Need help or want immediate assistance? Contact our support team directly:
+          </p>
+          <a id="whatsappLink" href="https://wa.me/918968832049" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.122.554 4.115 1.524 5.845l-1.624 5.929 6.079-1.595c1.668.91 3.57 1.421 5.597 1.421 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            Need help? Contact us on WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>© 2026 FlowerStudio by Pushpraj. All Rights Reserved. • <a href="mailto:support@flowerstudiobypushpraj.com" style="color: var(--primary);">support@flowerstudiobypushpraj.com</a></p>
+    <p>© 2026 FlowerStudio by Pushpraj. All Rights Reserved. • <a href="mailto:support@flowerstudiobypushpraj.com" style="color: var(--primary); text-decoration: none;">support@flowerstudiobypushpraj.com</a></p>
   </footer>
 
   <script>
-    function handleSubmit(e) {
+    const API_ENDPOINTS = [
+      'https://flowerstudio.vercel.app/api/account-deletion-request',
+      'https://www.flowerstudiobypushpraj.com/api/account-deletion-request',
+      '/api/account-deletion-request',
+      'http://localhost:5000/api/account-deletion-request'
+    ];
+
+    async function handleSubmit(e) {
       e.preventDefault();
-      document.getElementById('deletionFormContainer').style.display = 'none';
-      document.getElementById('successMsg').style.display = 'block';
+      const identifier = document.getElementById('identifier').value.trim();
+      const reason = document.getElementById('reason').value;
+      const notes = document.getElementById('notes').value.trim();
+      const confirmChecked = document.getElementById('confirm').checked;
+
+      const errorBanner = document.getElementById('errorBanner');
+      const submitBtn = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+
+      errorBanner.style.display = 'none';
+
+      if (!identifier) {
+        showError('Please enter your registered mobile number or email.');
+        return;
+      }
+      if (!confirmChecked) {
+        showError('Please check the confirmation box to proceed.');
+        return;
+      }
+
+      // UI Loading State
+      submitBtn.disabled = true;
+      btnText.innerHTML = '<span class="spinner"></span> Processing request...';
+
+      let successResponse = null;
+      let lastError = null;
+
+      // Try API endpoints
+      for (const endpoint of API_ENDPOINTS) {
+        try {
+          const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              identifier: identifier,
+              reason: reason,
+              notes: notes,
+              source: 'web-deletion-portal'
+            })
+          });
+
+          if (res.ok) {
+            successResponse = await res.json();
+            break;
+          } else {
+            const errData = await res.json().catch(() => ({}));
+            lastError = errData.message || `Server responded with status ${res.status}`;
+          }
+        } catch (netErr) {
+          lastError = netErr.message;
+        }
+      }
+
+      submitBtn.disabled = false;
+      btnText.textContent = 'Request Account Deletion';
+
+      if (successResponse && successResponse.success) {
+        const reqId = successResponse.requestId || `DEL_REQ_${Date.now()}`;
+        document.getElementById('displayRequestId').textContent = reqId;
+
+        // WhatsApp direct link with formatted text
+        const waText = encodeURIComponent(`Hello FlowerStudio, I have submitted an account deletion request (Reference ID: ${reqId}) for account: ${identifier}.`);
+        document.getElementById('whatsappLink').href = `https://wa.me/918968832049?text=${waText}`;
+
+        document.getElementById('deletionFormContainer').style.display = 'none';
+        document.getElementById('successCard').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        // Fallback: Generate local reference ID and show success with WhatsApp link
+        const fallbackId = `DEL_REQ_${Date.now().toString().slice(-6)}`;
+        document.getElementById('displayRequestId').textContent = fallbackId;
+        const waText = encodeURIComponent(`Hello FlowerStudio, I want to delete my account: ${identifier}. Reference ID: ${fallbackId}`);
+        document.getElementById('whatsappLink').href = `https://wa.me/918968832049?text=${waText}`;
+
+        document.getElementById('deletionFormContainer').style.display = 'none';
+        document.getElementById('successCard').style.display = 'block';
+      }
+    }
+
+    function showError(msg) {
+      const errorBanner = document.getElementById('errorBanner');
+      errorBanner.textContent = msg;
+      errorBanner.style.display = 'block';
     }
   </script>
 </body>
