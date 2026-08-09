@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Deletion & Data Erasure Request - FlowerStudio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #667A33;
+      --primary-dark: #4A5C22;
+      --danger: #DC2626;
+      --text: #1F2937;
+      --text-muted: #6B7280;
+      --bg: #F9F9FB;
+      --card-bg: #FFFFFF;
+      --border: #E5E7EB;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+    header { background: #FFFFFF; border-bottom: 1px solid var(--border); padding: 18px 24px; position: sticky; top: 0; z-index: 10; }
+    .header-container { max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .brand-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+    .warning-banner { background: #FEE2E2; border: 1px solid #FECACA; color: #991B1B; padding: 16px; border-radius: 12px; margin-bottom: 24px; font-size: 14px; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--text); margin-bottom: 8px; }
+    h2 { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+    p, li { font-size: 14px; color: #374151; margin-bottom: 8px; }
+    ul { padding-left: 24px; margin-bottom: 16px; }
+    .form-group { margin-bottom: 18px; }
+    label { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+    input[type="text"], input[type="tel"], input[type="email"], textarea {
+      width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; font-family: inherit; font-size: 14px;
+    }
+    input:focus, textarea:focus { outline: none; border-color: var(--primary); }
+    .btn-danger {
+      background: var(--danger); color: white; border: none; padding: 14px 24px; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; width: 100%; transition: background 0.2s;
+    }
+    .btn-danger:hover { background: #B91C1C; }
+    .success-msg { display: none; background: #DCFCE7; border: 1px solid #BBF7D0; color: #166534; padding: 18px; border-radius: 12px; text-align: center; }
+    footer { text-align: center; padding: 32px 20px; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border); background: #FFFFFF; margin-top: 40px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="https://flowerstudiobypushpraj.com" class="brand-title">FlowerStudio</a>
+      <span style="font-size: 13px; color: var(--text-muted);">Data Privacy Portal</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h1>Account & Data Deletion Portal</h1>
+      <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 20px;">Google Play Data Safety Compliant Deletion Gateway</p>
+
+      <div class="warning-banner">
+        <strong>⚠️ Permanent Data Deletion Notice:</strong> Submitting an account deletion request permanently wipes your profile, saved recipient addresses, eCoins, and order associations from our databases within 48 hours.
+      </div>
+
+      <h2>Data Purging Policy:</h2>
+      <ul>
+        <li><strong>Deleted Information:</strong> User profile (Name, Phone number, Email ID), saved addresses, delivery notes, and active session tokens.</li>
+        <li><strong>Retained Records:</strong> Completed transaction receipts and statutory GST tax invoices are retained strictly as required by applicable tax legislation in India.</li>
+      </ul>
+
+      <div id="deletionFormContainer">
+        <h2 style="margin-top: 24px;">Submit Deletion Request</h2>
+        <form id="deleteForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="phone">Registered Mobile Number *</label>
+            <input type="tel" id="phone" placeholder="+91 XXXXXXXXXX" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Registered Email Address (Optional)</label>
+            <input type="email" id="email" placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="reason">Reason for deletion (Optional)</label>
+            <textarea id="reason" rows="3" placeholder="Tell us why you are deleting your account..."></textarea>
+          </div>
+          <div class="form-group" style="display: flex; gap: 8px; align-items: flex-start;">
+            <input type="checkbox" id="confirm" required style="margin-top: 4px;" />
+            <label for="confirm" style="font-weight: 400; font-size: 13px; color: #4B5563;">I confirm that I want to permanently delete my FlowerStudio account and understand this action is irreversible.</label>
+          </div>
+          <button type="submit" class="btn-danger">Submit Account Deletion Request</button>
+        </form>
+      </div>
+
+      <div id="successMsg" class="success-msg">
+        <h3 style="font-size: 16px; margin-bottom: 6px;">Request Successfully Received</h3>
+        <p style="font-size: 13px;">Your account deletion request has been registered. Our security team will process the permanent erasure of your data within 24–48 business hours. You will receive an SMS/Email confirmation once completed.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 FlowerStudio by Pushpraj. All Rights Reserved. • <a href="mailto:support@flowerstudiobypushpraj.com" style="color: var(--primary);">support@flowerstudiobypushpraj.com</a></p>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('deletionFormContainer').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
