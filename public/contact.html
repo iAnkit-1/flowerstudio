@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - FlowerStudio by Pushpraj</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --primary: #667A33;
@@ -17,22 +20,113 @@
       --card-bg: #FFFFFF;
       --border: #E5E7EB;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
-    header { background: #FFFFFF; border-bottom: 1px solid var(--border); padding: 18px 24px; position: sticky; top: 0; z-index: 10; }
-    .header-container { max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    .brand-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--primary); text-decoration: none; }
-    .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-    .hero-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
-    h1 { font-family: 'Playfair Display', serif; font-size: 30px; color: var(--text); margin-bottom: 8px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
-    .contact-tile { background: #FFFFFF; border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; }
-    .contact-tile:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
-    .contact-tile h3 { font-size: 15px; font-weight: 600; color: var(--primary-dark); margin-bottom: 6px; }
-    .contact-tile p { font-size: 13px; color: #4B5563; }
-    footer { text-align: center; padding: 32px 20px; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border); background: #FFFFFF; margin-top: 40px; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border);
+      padding: 18px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .hero-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .contact-tile {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-tile:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .contact-tile h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+
+    .contact-tile p {
+      font-size: 13px;
+      color: #4B5563;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 13px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      background: #FFFFFF;
+      margin-top: 40px;
+    }
   </style>
 </head>
+
 <body>
   <header>
     <div class="header-container">
@@ -44,7 +138,8 @@
   <main class="container">
     <div class="hero-card">
       <h1>Contact FlowerStudio</h1>
-      <p style="color: var(--text-muted); font-size: 14px;">We are here to assist you 7 days a week with floral orders, corporate inquiries, and custom gifts.</p>
+      <p style="color: var(--text-muted); font-size: 14px;">We are here to assist you 7 days a week with floral orders,
+        corporate inquiries, and custom gifts.</p>
 
       <div class="grid">
         <a href="https://wa.me/919335401435" class="contact-tile">
@@ -59,9 +154,9 @@
           <p style="font-size: 12px; color: var(--primary); margin-top: 4px; font-weight: 600;">Call Us →</p>
         </a>
 
-        <a href="mailto:support@flowerstudiobypushpraj.com" class="contact-tile">
+        <a href="mailto:ankitsaini5.in@gmail.com" class="contact-tile">
           <h3>✉️ Email Support</h3>
-          <p>support@flowerstudiobypushpraj.com</p>
+          <p>ankitsaini5.in@gmail.com</p>
           <p style="font-size: 12px; color: var(--primary); margin-top: 4px; font-weight: 600;">Write to Us →</p>
         </a>
       </div>
@@ -69,7 +164,9 @@
   </main>
 
   <footer>
-    <p>© 2026 FlowerStudio by Pushpraj. All Rights Reserved. • <a href="https://flowerstudiobypushpraj.com" style="color: var(--primary);">flowerstudiobypushpraj.com</a></p>
+    <p>© 2026 FlowerStudio by Pushpraj. All Rights Reserved. • <a href="https://flowerstudiobypushpraj.com"
+        style="color: var(--primary);">flowerstudiobypushpraj.com</a></p>
   </footer>
 </body>
+
 </html>
