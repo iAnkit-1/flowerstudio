@@ -1,47 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-  --color-lotus-pink: #F50C58;
-  --color-lotus-pink-light: #FFF0F3;
-  --color-lotus-pink-dark: #D20A47;
-  --color-lotus-green: #3BD440;
+  --color-lotus-pink: #D90429;
+  --color-lotus-pink-light: #FFF0F5;
+  --color-lotus-pink-dark: #B00320;
+  --color-lotus-pink-accent: #FFD6E0;
+  --color-lotus-green: #2E7D32;
   --color-lotus-green-light: #F0FDF4;
-  --color-lotus-green-dark: #2EB632;
-  --color-lotus-dark: #1F1A1C;
+  --color-lotus-green-dark: #1B5E20;
+  --color-lotus-gold: #D4AF37;
+  --color-lotus-dark: #1A1A1A;
+  --color-lotus-cream: #FFF9FA;
   --color-lotus-charcoal: #111827;
   
-  --font-sans: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Inter', 'Outfit', system-ui, -apple-system, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
 }
 
 @layer base {
   body {
-    @apply font-sans bg-slate-50 text-slate-800 antialiased scroll-smooth;
+    @apply font-sans bg-[#FFF9FA] text-[#1A1A1A] antialiased scroll-smooth;
   }
 }
 
 /* Custom premium styling utilities */
 .glass-nav {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(245, 12, 88, 0.08);
+  border-bottom: 1px solid rgba(217, 4, 41, 0.08);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(241, 241, 241, 0.8);
 }
 
 .glass-dark {
-  background: rgba(17, 24, 39, 0.85);
+  background: rgba(26, 26, 26, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Hide scrollbar but keep functionality */
@@ -59,5 +62,6 @@
 }
 .hover-lift:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 20px -8px rgba(245, 12, 88, 0.15);
+  box-shadow: 0 12px 24px -8px rgba(217, 4, 41, 0.18);
 }
+

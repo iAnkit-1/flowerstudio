@@ -1,215 +1,16 @@
-// Flower Studio Mock Data
+// Flower Studio Live Data Config & Sector Helpers
 
 export const categories = [
-  { id: 'all', name: 'All Collection', image: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=150' },
-  { id: 'flowers', name: 'Fresh Flowers', image: 'https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&q=80&w=150' },
-  { id: 'bouquets', name: 'Bouquets', image: 'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=150' },
-  { id: 'hampers', name: 'Gift Hampers', image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=150' },
-  { id: 'cakes', name: 'Delicious Cakes', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=150' },
-  { id: 'plants', name: 'Gift Plants', image: 'https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&q=80&w=150' },
-  { id: 'pooja', name: 'Pooja Items', image: 'https://images.unsplash.com/photo-1534009502677-4e5080efa8c6?auto=format&fit=crop&q=80&w=150' }
+  { id: 'all', name: 'All Collection', image: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=300' },
+  { id: 'flower', name: 'Fresh Flowers', image: 'https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&q=80&w=300' },
+  { id: 'hamper', name: 'Gift Hampers', image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=300' },
+  { id: 'cake', name: 'Delicious Cakes', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=300' },
+  { id: 'plants', name: 'Gift Plants', image: 'https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&q=80&w=300' },
+  { id: 'pooja', name: 'Pooja Items', image: 'https://images.unsplash.com/photo-1534009502677-4e5080efa8c6?auto=format&fit=crop&q=80&w=300' }
 ];
 
-export const products = [
-  // Fresh Flowers & Bouquets
-  {
-    id: 'f1',
-    name: 'Artificial Red Flowers',
-    category: 'bouquets',
-    price: 399,
-    rating: 4.8,
-    reviewsCount: 42,
-    image: '/art_red_flower.jpg',
-    images: [
-      '/art_red_flower.jpg'
-    ],
-    description: 'Artificial red flowers for home decoration.',
-    features: ['Artificial Red Flowers', 'Premium artificial flowers', 'Eco-friendly wrapping paper', 'Free message card included'],
-    inStock: true
-  },
-  {
-    id: 'f2',
-    name: 'Artificial Pink Roses',
-    category: 'bouquets',
-    price: 499,
-    rating: 4.7,
-    reviewsCount: 28,
-    image: '/art_pink_rose.png',
-    images: [
-      '/art_pink_rose.png'
-    ],
-    description: 'Artificial pink roses for home decoration.',
-    features: ['Artificial Pink Roses', 'Premium artificial flowers', 'Eco-friendly wrapping paper', 'Free message card included'],
-    inStock: true
-  },
-  {
-    id: 'f3',
-    name: 'Artificial Light Pink Roses',
-    category: 'flowers',
-    price: 499,
-    rating: 4.6,
-    reviewsCount: 19,
-    image: 'art_lite_pink_rose_1.jpg',
-    images: [
-      '/art_lite_pink_rose_1.jpg',
-      '/art_lite_pink_rose_2.jpg'
-    ],
-    description: 'Artificial light pink roses for home decoration.',
-    features: ['Artificial Light Pink Roses', 'Premium artificial flowers', 'Eco-friendly wrapping paper', 'Free message card included'],
-    inStock: true
-  },
-  {
-    id: 'f4',
-    name: 'Classic Red Roses Bouquet',
-    category: 'flowers',
-    price: 1199,
-    rating: 4.9,
-    reviewsCount: 33,
-    image: 'classic_red_roses_bouquet.png',
-    images: [
-      'classic_red_roses_bouquet.png'
-    ],
-    description: 'A gorgeous arrangement of 12 handpicked premium red roses wrapped in elegant craft paper. Perfect for expressing love and gratitude.',
-    features: ['12 Premium Red Roses', 'Gypsophila Fillers', 'Eco-friendly wrapping paper', 'Free message card included'],
-    inStock: true
-  },
-  
-  // Hampers
-  {
-    id: 'h1',
-    name: 'Luxury Celebration Gift Hamper',
-    category: 'hampers',
-    price: 2499,
-    rating: 4.9,
-    reviewsCount: 15,
-    image: '/ham_blue_bear.jpg',
-    images: [
-      '/ham_blue_bear.jpg'
-    ],
-    description: 'The ultimate gifting combo consisting of fresh carnations, premium chocolates, a jar of mixed nuts, and a cute teddy bear.',
-    features: ['Carnation bouquet', 'Premium Ferrero Rocher Box (16 Pcs)', 'Salted Almonds & Cashews (200g each)', 'Fluffy 6-inch Teddy Bear', 'Handwoven wicker basket'],
-    inStock: true
-  },
-  {
-    id: 'h2',
-    name: 'Fruit & Flower Wellness Basket',
-    category: 'hampers',
-    price: 1599,
-    rating: 4.7,
-    reviewsCount: 22,
-    image: '/ham_pink_smbear_1.jpg',
-    images: [
-      '/ham_pink_smbear_1.jpg',
-      '/ham_pink_smbear_2.jpg'
-    ],
-    description: 'Send healing thoughts and warm wishes with a basket loaded with seasonal fresh fruits and fragrant marigolds and roses.',
-    features: ['3kg fresh premium fruits (Apples, Grapes, Pears, Oranges)', 'Orange Gerbera & Rose borders', 'Sturdy wooden crate', 'Get Well Soon card'],
-    inStock: true
-  },
-  
-      {
-    id: 'h3',
-    name: 'Fruit & Flower Wellness Basket',
-    category: 'hampers',
-    price: 1599,
-    rating: 4.7,
-    reviewsCount: 22,
-    image: '/ham_pink_flbear.jpg',
-    images: [
-      '/ham_pink_flbear.jpg'
-    ],
-    description: 'Send healing thoughts and warm wishes with a basket loaded with seasonal fresh fruits and fragrant marigolds and roses.',
-    features: ['3kg fresh premium fruits (Apples, Grapes, Pears, Oranges)', 'Orange Gerbera & Rose borders', 'Sturdy wooden crate', 'Get Well Soon card'],
-    inStock: true
-  },
-
-      {
-    id: 'h4',
-    name: 'Fruit & Flower Wellness Basket',
-    category: 'hampers',
-    price: 1599,
-    rating: 4.7,
-    reviewsCount: 22,
-    image: '/ham_kitkat.jpg',
-    images: [
-      '/ham_kitkat.jpg'
-    ],
-    description: 'Send healing thoughts and warm wishes with a basket loaded with seasonal fresh fruits and fragrant marigolds and roses.',
-    features: ['3kg fresh premium fruits (Apples, Grapes, Pears, Oranges)', 'Orange Gerbera & Rose borders', 'Sturdy wooden crate', 'Get Well Soon card'],
-    inStock: true
-  },
-
-  
-  // Plants
-  {
-    id: 'p1',
-    name: 'Peace Lily Air-Purifying Plant',
-    category: 'plants',
-    price: 449,
-    rating: 4.5,
-    reviewsCount: 51,
-    image: '/pl_sm_1.jpg',
-    images: [
-      '/pl_sm_1.jpg',
-      '/pl_sm_2.jpg'
-    ],
-    description: 'Breathe clean air with the beautiful Peace Lily plant in a designer white ceramic pot. Known for its gorgeous white spade blooms.',
-    features: ['Live Peace Lily Plant', 'Self-watering plastic inner pot', 'White Ceramic outer pot', 'Low-maintenance & air-filtering'],
-    inStock: true
-  },
-  {
-    id: 'p2',
-    name: 'Grafted Bonsai Ficus Plant',
-    category: 'plants',
-    price: 1299,
-    rating: 4.8,
-    reviewsCount: 14,
-    image: '/pl_lg_1.jpg',
-    images: [
-      '/pl_lg_1.jpg',
-      '/pl_lg_2.jpg'
-    ],
-    description: 'An elegant Ficus microcarpa Bonsai with thick twisted trunks and lush green leaves. Represents good fortune and peace.',
-    features: ['5-year-old Bonsai Plant', 'Traditional clay pot', 'Detailed care instruction booklet', 'Excellent corporate gift choice'],
-    inStock: true
-  },
-
-    {
-    id: 'p3',
-    name: 'Grafted Bonsai Ficus Plant',
-    category: 'plants',
-    price: 1299,
-    rating: 4.8,
-    reviewsCount: 14,
-    image: '/pl_sm_dec_1.jpg',
-    images: [
-      '/pl_sm_dec_1.jpg',
-      '/pl_sm_dec_2.jpg'
-    ],
-    description: 'An elegant Ficus microcarpa Bonsai with thick twisted trunks and lush green leaves. Represents good fortune and peace.',
-    features: ['5-year-old Bonsai Plant', 'Traditional clay pot', 'Detailed care instruction booklet', 'Excellent corporate gift choice'],
-    inStock: true
-  },
-  
-      {
-    id: 'p4',
-    name: 'Grafted Bonsai Ficus Plant',
-    category: 'plants',
-    price: 1299,
-    rating: 4.8,
-    reviewsCount: 14,
-    image: '/pl_money_1.jpg',
-    images: [
-      '/pl_money_1.jpg',
-      '/pl_money_2.jpg'
-    ],
-    description: 'An elegant Ficus microcarpa Bonsai with thick twisted trunks and lush green leaves. Represents good fortune and peace.',
-    features: ['5-year-old Bonsai Plant', 'Traditional clay pot', 'Detailed care instruction booklet', 'Excellent corporate gift choice'],
-    inStock: true
-  },
-  // Pooja Items
-  
-];
+// All static demo product cards removed! Products are fetched live from API via TanStack Query.
+export const products = [];
 
 export const initialTestimonials = [
   {
@@ -279,7 +80,7 @@ export const validatePincode = (pincode) => {
       message: 'Please enter a valid 6-digit postal code.'
     };
   }
-  
+
   if (cleanPin.startsWith('160')) {
     const sector = chandigarhSectors[cleanPin] || 'Chandigarh Region';
     return {
@@ -288,7 +89,7 @@ export const validatePincode = (pincode) => {
       message: `Verified! Flower Studio delivers to ${sector} in 2-3 days.`
     };
   }
-  
+
   return {
     valid: false,
     message: 'We currently deliver exclusively to Chandigarh region pin codes (starting with 160).'

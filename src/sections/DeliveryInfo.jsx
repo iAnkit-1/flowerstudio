@@ -49,12 +49,14 @@ export default function DeliveryInfo() {
         
         {/* Section Header */}
         <div className="max-w-2xl mx-auto space-y-3 mb-16 text-center">
-          <span className="text-xs font-bold text-lotus-pink uppercase tracking-widest">Local Deliveries</span>
+          <span className="text-xs font-extrabold text-lotus-pink uppercase tracking-widest bg-pink-100/70 px-3.5 py-1 rounded-full border border-pink-200/60 inline-flex items-center gap-1.5">
+            Tricity Express Delivery
+          </span>
           <h2 className="font-serif font-bold text-3xl sm:text-4xl text-slate-900 leading-tight">
-            Chandigarh Region <span className="text-lotus-pink">Coverage</span>
+            Chandigarh • Mohali • Panchkula <span className="text-lotus-pink">Coverage</span>
           </h2>
           <p className="text-sm text-slate-500 max-w-lg mx-auto">
-            We operate exclusively within the Tricity/Chandigarh sector network to maintain freshness and speed.
+            We deliver fresh flowers, luxury hampers, cakes, and gift plants across the entire Tricity region within 60 minutes or standard slots.
           </p>
         </div>
 
