@@ -36,7 +36,7 @@ function MainContent({ cart, setCart, cartOpen, setCartOpen, appDownloadModalOpe
   };
 
   return (
-    <div className="relative min-h-screen bg-[#FFF9FA] flex flex-col justify-between overflow-x-hidden selection:bg-lotus-pink/20 selection:text-lotus-pink">
+    <div className="relative min-h-screen bg-[#FFF9FA] flex flex-col justify-between selection:bg-lotus-pink/20 selection:text-lotus-pink">
       {/* Navbar with Tricity Location Branding */}
       <Navbar
         cart={cart}
@@ -48,7 +48,7 @@ function MainContent({ cart, setCart, cartOpen, setCartOpen, appDownloadModalOpe
       />
 
       {/* Main View Router: Home vs Products Page */}
-      <main className="flex-grow">
+      <main className="flex-grow overflow-x-hidden">
         {currentPage === 'home' ? (
           <>
             {/* Top Shop By Category Grid */}
@@ -133,7 +133,7 @@ function MainContent({ cart, setCart, cartOpen, setCartOpen, appDownloadModalOpe
 
       {/* Floating WhatsApp Quick Helpline */}
       <a
-        href="https://wa.me/919815493338?text=Hello%20Flower%20Studio!%20I%20have%20a%20question%20about%20your%20gifting%20deliveries%20in%20Chandigarh."
+        href="https://wa.me/919872005054?text=Hello%20Flower%20Studio!%20I%20have%20a%20question%20about%20your%20gifting%20deliveries%20in%20Chandigarh."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-40 hover:scale-110 transition-transform shadow-xl rounded-full"

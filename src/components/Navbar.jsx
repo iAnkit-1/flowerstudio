@@ -52,23 +52,7 @@ export default function Navbar({ cart, onRemoveFromCart, onUpdateQuantity, cartO
     <>
       <header ref={headerRef} className="sticky top-0 z-40 w-full glass-nav shadow-sm transition-all duration-300">
         {/* Top Announcement Bar - Tricity Region */}
-        <div className="bg-gradient-to-r from-lotus-pink via-rose-600 to-lotus-pink-dark text-white text-xs py-2 px-4 flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0">
-          <div className="flex items-center gap-1.5 justify-center md:justify-start">
-            <MapPin className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
-            <span className="font-semibold">Express Delivery in Chandigarh • Mohali • Panchkula</span>
-          </div>
-          <div className="flex items-center gap-4 text-[11px] justify-center md:justify-end">
-            <span>Hours: 8:00 AM - 10:00 PM</span>
-            <span className="h-3 w-px bg-white/30 hidden sm:block"></span>
-            <button
-              onClick={() => onOpenAppDownloadModal && onOpenAppDownloadModal()}
-              className="flex items-center gap-1 font-bold text-amber-200 hover:text-white transition-colors cursor-pointer"
-            >
-              <Smartphone className="w-3.5 h-3.5" />
-              <span>Get Android App</span>
-            </button>
-          </div>
-        </div>
+ 
 
         {/* Main Header Row */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
