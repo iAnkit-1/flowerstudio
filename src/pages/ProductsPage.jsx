@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useProductsContext } from '../context/ProductsContext';
 import ProductCard from '../components/ProductCard';
-import { Search, Sparkles, X, ArrowUpDown, RefreshCw, AlertCircle, MapPin, Tag } from 'lucide-react';
+import { Search, Sparkles, X, ArrowUpDown, RefreshCw, AlertCircle, MapPin, Tag, Filter } from 'lucide-react';
 
 export default function ProductsPage({ onBuyNow }) {
   const {
@@ -92,161 +92,90 @@ export default function ProductsPage({ onBuyNow }) {
   }, [products, activeCategory, activeSubCategory, selectedTag, searchQuery, maxPrice, sortBy]);
 
   return (
-    <div className="py-10 bg-[#FFF9FA] min-h-screen">
+    <div className="pt-0 pb-10 bg-[#FFF9FA] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Breadcrumb & Back to Home */}
-        <div className="flex items-center justify-between mb-6">
-          <button
-            onClick={() => navigateToPage('home')}
-            className="text-xs font-extrabold text-lotus-pink hover:underline flex items-center gap-1 cursor-pointer"
-          >
-            ← Back to Home
-          </button>
-          <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
-            <MapPin className="w-3.5 h-3.5 text-lotus-green" />
-            <span>Delivering in Chandigarh • Mohali • Panchkula</span>
-          </div>
-        </div>
-
-        {/* Page Title Header */}
-        <div className="max-w-2xl mx-auto space-y-2 mb-10 text-center">
-          <span className="text-xs font-extrabold text-lotus-pink uppercase tracking-widest bg-pink-100/70 px-3.5 py-1 rounded-full border border-pink-200/60 inline-flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-lotus-pink" />
-            Full Gifting Catalog
-          </span>
-          <h1 className="font-serif font-bold text-3xl sm:text-4xl text-slate-900 leading-tight">
-            Our <span className="text-lotus-pink">Gifting Catalog</span>
-          </h1>
-          <p className="text-xs sm:text-sm text-slate-500">
-            Browse fresh stem flowers, hampers, artisanal cakes, and plants.
-          </p>
-        </div>
-
-        {/* Filter Controls Bar */}
-        <div className="bg-white p-5 rounded-3xl border border-slate-150 mb-10 space-y-4 shadow-sm">
-          {/* Top Row: Search & Sort */}
-          <div className="flex flex-col sm:flex-row gap-3 items-center justify-between">
+        {/* Sticky Filters Panel (Search Bar, Categories & Subcategories) */}
+        <div className="sticky top-20 z-30 bg-[#FFF9FA]/95 backdrop-blur-md -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 pt-1 pb-3 border-b border-pink-100/35 mb-8 shadow-xs space-y-3">
+          <div className="max-w-7xl mx-auto space-y-3">
             {/* Search Input */}
-            <div className="relative w-full sm:max-w-md">
-              <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+            <div className="relative w-full max-w-xl mx-auto">
+              <Search className="w-5 h-5 absolute left-4.5 top-1/2 -translate-y-1/2 text-slate-400" />
               <input
                 type="text"
-                placeholder="Search roses, hampers, bonsai, cakes..."
+                placeholder="Search roses, hampers, cakes, plants..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-10 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-xs sm:text-sm focus:outline-none focus:border-lotus-pink focus:ring-1 focus:ring-lotus-pink transition-all"
+                className="w-full pl-12 pr-10 py-3 bg-white border border-pink-100/40 rounded-full text-sm focus:outline-none focus:border-lotus-pink focus:ring-2 focus:ring-lotus-pink/10 shadow-sm transition-all font-sans font-medium text-slate-800"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                  className="absolute right-4.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-655 transition-colors"
                 >
                   <X className="w-4 h-4" />
                 </button>
               )}
             </div>
 
-            {/* Sort & Refetch */}
-            <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
-              <button
-                onClick={() => refetch()}
-                className="p-2.5 rounded-2xl bg-slate-50 border border-slate-200 text-slate-600 hover:text-lotus-pink hover:border-pink-200 transition-all cursor-pointer"
-                title="Refresh products"
-              >
-                <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin' : ''}`} />
-              </button>
-
-              <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 px-3 py-2 rounded-2xl text-xs text-slate-700">
-                <ArrowUpDown className="w-3.5 h-3.5 text-slate-400" />
-                <span className="font-semibold text-slate-500">Sort:</span>
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="bg-transparent font-extrabold text-slate-800 focus:outline-none cursor-pointer"
-                >
-                  <option value="featured">Featured</option>
-                  <option value="price-low">Price: Low to High</option>
-                  <option value="price-high">Price: High to Low</option>
-                  <option value="rating">Highest Rated</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          {/* Category Filter Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pt-1 pb-1">
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider flex-shrink-0 mr-1">
-              Category:
-            </span>
-            <button
-              onClick={() => {
-                setActiveCategory('all');
-                setActiveSubCategory('all');
-              }}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-extrabold transition-all cursor-pointer flex-shrink-0 ${
-                activeCategory === 'all'
-                  ? 'bg-lotus-pink text-white shadow-md shadow-pink-500/20'
-                  : 'bg-slate-50 text-slate-600 hover:bg-pink-50 border border-slate-200'
-              }`}
-            >
-              All ({products.length})
-            </button>
-            {availableCategories.map((cat) => {
-              const count = products.filter((p) => p.category === cat).length;
-              const isActive = activeCategory === cat;
-              return (
+            {/* Categories & Inline Subcategories Flex Row */}
+            <div className="flex items-center justify-between gap-4">
+              {/* Scrollable Categories List */}
+              <div className="flex-1 flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
                 <button
-                  key={cat}
                   onClick={() => {
-                    setActiveCategory(cat);
+                    setActiveCategory('all');
                     setActiveSubCategory('all');
                   }}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-extrabold transition-all cursor-pointer flex-shrink-0 capitalize ${
-                    isActive
-                      ? 'bg-lotus-pink text-white shadow-md shadow-pink-500/20'
-                      : 'bg-slate-50 text-slate-600 hover:bg-pink-50 border border-slate-200'
+                  className={`px-5 py-2 rounded-full text-xs font-extrabold transition-all cursor-pointer flex-shrink-0 border ${
+                    activeCategory === 'all'
+                      ? 'bg-lotus-pink text-white border-transparent shadow-md shadow-pink-500/15'
+                      : 'bg-white hover:bg-pink-50/45 text-slate-600 border-slate-200/80 hover:border-pink-200/60'
                   }`}
                 >
-                  {cat} ({count})
+                  All ({products.length})
                 </button>
-              );
-            })}
-          </div>
+                {availableCategories.map((cat) => {
+                  const count = products.filter((p) => p.category === cat).length;
+                  const isActive = activeCategory === cat;
+                  return (
+                    <button
+                      key={cat}
+                      onClick={() => {
+                        setActiveCategory(cat);
+                        setActiveSubCategory('all');
+                      }}
+                      className={`px-5 py-2 rounded-full text-xs font-extrabold transition-all cursor-pointer flex-shrink-0 capitalize border ${
+                        isActive
+                          ? 'bg-lotus-pink text-white border-transparent shadow-md shadow-pink-500/15'
+                          : 'bg-white hover:bg-pink-50/45 text-slate-600 border-slate-200/80 hover:border-pink-200/60'
+                      }`}
+                    >
+                      {cat} ({count})
+                    </button>
+                  );
+                })}
+              </div>
 
-          {/* Subcategory Filter Pills */}
-          {availableSubCategories.length > 0 && (
-            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pt-2 border-t border-slate-100">
-              <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex-shrink-0 mr-1">
-                Subcategory:
-              </span>
-              <button
-                onClick={() => setActiveSubCategory('all')}
-                className={`px-3 py-1 rounded-lg text-[11px] font-bold transition-all cursor-pointer flex-shrink-0 ${
-                  activeSubCategory === 'all'
-                    ? 'bg-slate-900 text-white'
-                    : 'bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200'
-                }`}
-              >
-                All Subcategories
-              </button>
-              {availableSubCategories.map((subCat) => {
-                const isActive = activeSubCategory === subCat;
-                return (
-                  <button
-                    key={subCat}
-                    onClick={() => setActiveSubCategory(subCat)}
-                    className={`px-3 py-1 rounded-lg text-[11px] font-bold transition-all cursor-pointer flex-shrink-0 capitalize ${
-                      isActive
-                        ? 'bg-slate-900 text-white'
-                        : 'bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200'
-                    }`}
+              {/* Inline Subcategory Filter Dropdown */}
+              {!isLoading && !isError && availableSubCategories.length > 0 && (
+                <div className="flex-shrink-0 flex items-center gap-1.5 bg-white border border-slate-200/80 hover:border-pink-200/60 px-3.5 py-1.5 rounded-full text-xs text-slate-700 shadow-xs transition-all relative">
+                  <Filter className="w-3.5 h-3.5 text-slate-400" />
+                  <select
+                    value={activeSubCategory}
+                    onChange={(e) => setActiveSubCategory(e.target.value)}
+                    className="bg-transparent font-extrabold text-slate-800 focus:outline-none cursor-pointer pr-1 capitalize"
                   >
-                    {subCat}
-                  </button>
-                );
-              })}
+                    <option value="all">All</option>
+                    {availableSubCategories.map((subCat) => (
+                      <option key={subCat} value={subCat}>
+                        {subCat}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </div>
 
         {/* Loading state */}
