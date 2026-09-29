@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
-export const API_BASE_URL = 'https://flower-studio-phi.vercel.app/api';
+export const API_BASE_URL = 'https://api.flowerstudiobypushpraj.com/api';
 
 /**
  * Fetch products from Backend API
