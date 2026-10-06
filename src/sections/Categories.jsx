@@ -60,11 +60,10 @@ export default function Categories({ activeCategory, onSelectCategory, available
               <button
                 key={cat.id}
                 onClick={() => handleCategoryClick(cat.id)}
-                className={`group relative aspect-square rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer border-2 ${
-                  isActive
-                    ? 'border-lotus-pink shadow-lg shadow-pink-500/15 scale-[1.02]'
-                    : 'border-transparent hover:border-pink-200'
-                }`}
+                className={`group relative aspect-square rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer border-2 ${isActive
+                  ? 'border-lotus-pink shadow-lg shadow-pink-500/15 scale-[1.02]'
+                  : 'border-transparent hover:border-pink-200'
+                  }`}
               >
                 {/* Background Image */}
                 <img
@@ -75,11 +74,10 @@ export default function Categories({ activeCategory, onSelectCategory, available
                 />
 
                 {/* Dark Gradient Overlay */}
-                <div className={`absolute inset-0 transition-all duration-300 ${
-                  isActive
-                    ? 'bg-gradient-to-t from-lotus-pink/90 via-slate-950/40 to-transparent'
-                    : 'bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent group-hover:from-slate-950/90'
-                }`} />
+                <div className={`absolute inset-0 transition-all duration-300 ${isActive
+                  ? 'bg-gradient-to-t from-lotus-pink/90 via-slate-950/40 to-transparent'
+                  : 'bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent group-hover:from-slate-950/90'
+                  }`} />
 
                 {/* Card Title */}
                 <div className="absolute inset-0 p-3.5 flex flex-col justify-end text-left z-10">
