@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-400 pt-16 border-t-4 border-lotus-pink">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-        
+
         {/* About Column */}
         <div className="space-y-4">
           <div className="flex items-center gap-3">
@@ -43,14 +43,14 @@ export default function Footer() {
                 <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z" />
               </svg>
             </a>
-            <a href="https://instagram.com" className="w-8 h-8 rounded-full bg-slate-800 hover:bg-lotus-pink hover:text-white flex items-center justify-center transition-all duration-300 text-slate-400 cursor-pointer" aria-label="Instagram">
+            <a href="https://instagram.com/flowerstudio.chd" className="w-8 h-8 rounded-full bg-slate-800 hover:bg-lotus-pink hover:text-white flex items-center justify-center transition-all duration-300 text-slate-400 cursor-pointer" aria-label="Instagram">
               <svg className="w-4 h-4 stroke-current fill-none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                 <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
               </svg>
             </a>
-            <a href="https://wa.me/919815493338" className="w-8 h-8 rounded-full bg-slate-800 hover:bg-lotus-green hover:text-white flex items-center justify-center transition-all duration-300 text-slate-400 cursor-pointer" aria-label="WhatsApp">
+            <a href="https://wa.me/919335401435" className="w-8 h-8 rounded-full bg-slate-800 hover:bg-lotus-green hover:text-white flex items-center justify-center transition-all duration-300 text-slate-400 cursor-pointer" aria-label="WhatsApp">
               <MessageSquare className="w-4 h-4" />
             </a>
           </div>
@@ -134,9 +134,9 @@ export default function Footer() {
             <li className="flex items-start gap-2.5">
               <MapPin className="w-4.5 h-4.5 text-lotus-pink mt-0.5 flex-shrink-0" />
               <div className="text-slate-350 leading-snug">
-                <p className="font-semibold text-slate-300">Flower Studio Shop</p>
-                <p className="text-slate-400 mt-0.5">Sco-52, Sector 29,</p>
-                <p className="text-slate-400">Chandigarh, Pin 160029</p>
+                <p className="font-semibold text-slate-300">Flower Studio</p>
+                <p className="text-slate-400 mt-0.5">Sco-52, Sector 29D,</p>
+                <p className="text-slate-400">Chandigarh, 160030</p>
               </div>
             </li>
             <li className="flex items-start gap-2.5">
@@ -149,8 +149,8 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2.5">
               <Mail className="w-4.5 h-4.5 text-slate-400 flex-shrink-0" />
-              <a href="mailto:info@flowerstudiochd.com" className="text-slate-400 hover:text-lotus-pink transition-colors mt-0.5 truncate">
-                info@flowerstudiochd.com
+              <a href="mailto:flowerstudiobypushpraj@gmail.com" className="text-slate-400 hover:text-lotus-pink transition-colors mt-0.5 truncate">
+                flowerstudiobypushpraj@gmail.com
               </a>
             </li>
           </ul>
@@ -162,7 +162,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
           <p>© {new Date().getFullYear()} <span className="text-slate-400 font-semibold">Flower Studio</span>. All Rights Reserved.</p>
           <p className="text-[11px] text-slate-500/80">
-            Sco-52, Sector 29, Chandigarh. Serving Chandigarh exclusively.
+            Sco-52, Sector 29D, Chandigarh. Serving Chandigarh exclusively.
           </p>
         </div>
       </div>

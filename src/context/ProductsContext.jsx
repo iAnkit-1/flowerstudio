@@ -10,15 +10,25 @@ export function ProductsProvider({ children }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const [activeSubCategory, setActiveSubCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'products'
+  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'products' | 'product-details'
+  const [selectedProductId, setSelectedProductId] = useState(null);
 
   // Sync route / pathname if changed (History API routing)
   useEffect(() => {
     const handleLocationChange = () => {
       const path = window.location.pathname;
-      if (path === '/products') {
+
+      // Check if URL matches /product/:id or /products/:id
+      const productMatch = path.match(/^\/product\/([^/]+)/) || (path.startsWith('/products/') && path.split('/')[2] ? path.match(/^\/products\/([^/]+)/) : null);
+
+      if (productMatch && productMatch[1]) {
+        setSelectedProductId(decodeURIComponent(productMatch[1]));
+        setCurrentPage('product-details');
+      } else if (path === '/products') {
+        setSelectedProductId(null);
         setCurrentPage('products');
       } else {
+        setSelectedProductId(null);
         setCurrentPage('home');
       }
     };
@@ -33,9 +43,22 @@ export function ProductsProvider({ children }) {
       setActiveCategory(category);
       setActiveSubCategory('all');
     }
+    setSelectedProductId(null);
     setCurrentPage(page);
 
     const targetPath = page === 'products' ? '/products' : '/';
+    if (window.location.pathname !== targetPath) {
+      window.history.pushState({}, '', targetPath);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navigateToProduct = (productId) => {
+    if (!productId) return;
+    setSelectedProductId(productId);
+    setCurrentPage('product-details');
+
+    const targetPath = `/product/${productId}`;
     if (window.location.pathname !== targetPath) {
       window.history.pushState({}, '', targetPath);
     }
@@ -76,7 +99,10 @@ export function ProductsProvider({ children }) {
     setSearchQuery,
     currentPage,
     setCurrentPage,
+    selectedProductId,
+    setSelectedProductId,
     navigateToPage,
+    navigateToProduct,
     availableCategories,
     availableSubCategories,
   };

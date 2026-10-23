@@ -152,7 +152,7 @@ export default function DeliveryInfo() {
                 <p className="font-bold text-slate-800 text-xs">Pickup Location / Main Studio</p>
                 <div className="flex items-start gap-2">
                   <MapPin className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
-                  <span>Sco-52, Sector 29, Chandigarh (opposite Main Market)</span>
+                  <span>Sco-52, Sector 29D, Chandigarh</span>
                 </div>
                 <div className="flex flex-wrap gap-x-4 gap-y-1">
                   <span>Helplines: <a href="tel:9815493338" className="font-bold text-slate-700 hover:text-lotus-pink">9815493338</a></span>

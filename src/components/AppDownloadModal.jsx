@@ -38,7 +38,7 @@ export default function AppDownloadModal({ isOpen, onClose, selectedProduct = nu
 
         {/* Main Grid Content */}
         <div className="grid grid-cols-1 md:grid-cols-12">
-          
+
           {/* Left Column: Image Banner (Visible on desktop/tablet) */}
           <div className="hidden md:flex md:col-span-5 bg-[#FFF2F4] items-center justify-center border-r border-pink-100/20 relative overflow-hidden">
             <img
@@ -119,7 +119,7 @@ export default function AppDownloadModal({ isOpen, onClose, selectedProduct = nu
               {/* Play Store CTA and Button */}
               <div className="pt-1">
                 <a
-                  href="https://play.google.com/apps/testing/com.flowerstudiobypushpraj.app"
+                  href="https://play.google.com/store/apps/details?id=com.flowerstudiobypushpraj.app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center bg-[#0F0F10] hover:bg-[#1e1e20] text-white py-2 px-4 rounded-xl border border-white/10 shadow-md shadow-slate-950/20 hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer"

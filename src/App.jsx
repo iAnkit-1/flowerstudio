@@ -5,18 +5,32 @@ import CategoryHeaderGrid from './sections/CategoryHeaderGrid';
 import BestsellersSection from './sections/BestsellersSection';
 import CategoryProductsSection from './sections/CategoryProductsSection';
 import ProductsPage from './pages/ProductsPage';
+import ProductDetailPage from './pages/ProductDetailPage';
 import DeliveryInfo from './sections/DeliveryInfo';
 import Footer from './components/Footer';
 import GoldMembershipPopup from './components/GoldMembershipPopup';
 import AppDownloadModal from './components/AppDownloadModal';
 
 function MainContent({ cart, setCart, cartOpen, setCartOpen, appDownloadModalOpen, setAppDownloadModalOpen, selectedProductForDownload, setSelectedProductForDownload }) {
-  const { currentPage } = useProductsContext();
+  const { currentPage, selectedProductId } = useProductsContext();
   const [goldPopupOpen, setGoldPopupOpen] = useState(false);
 
   const handleOpenAppDownloadModal = (product = null) => {
     setSelectedProductForDownload(product);
     setAppDownloadModalOpen(true);
+  };
+
+  const handleAddToCart = (product, quantity = 1) => {
+    setCart((prevCart) => {
+      const existing = prevCart.find((item) => item.id === product.id);
+      if (existing) {
+        return prevCart.map((item) =>
+          item.id === product.id ? { ...item, quantity: item.quantity + quantity } : item
+        );
+      }
+      return [...prevCart, { ...product, quantity }];
+    });
+    setCartOpen(true);
   };
 
   const handleRemoveFromCart = (productId) => {
@@ -112,6 +126,13 @@ function MainContent({ cart, setCart, cartOpen, setCartOpen, appDownloadModalOpe
             {/* Local Pincode checker & delivery metrics */}
             <DeliveryInfo />
           </>
+        ) : currentPage === 'product-details' ? (
+          /* Dedicated Product Details Page matching user reference */
+          <ProductDetailPage
+            productId={selectedProductId}
+            onAddToCart={handleAddToCart}
+            onBuyNow={handleOpenAppDownloadModal}
+          />
         ) : (
           /* Dedicated /products catalog page */
           <ProductsPage onBuyNow={handleOpenAppDownloadModal} />

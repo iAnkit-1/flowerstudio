@@ -105,9 +105,8 @@ export default function Hero({ onSelectCategory }) {
           return (
             <div
               key={idx}
-              className={`absolute inset-0 w-full h-full bg-cover bg-center transition-all duration-1000 ease-in-out ${
-                isActive ? 'opacity-100 z-10 scale-100' : 'opacity-0 z-0 scale-105 pointer-events-none'
-              }`}
+              className={`absolute inset-0 w-full h-full bg-cover bg-center transition-all duration-1000 ease-in-out ${isActive ? 'opacity-100 z-10 scale-100' : 'opacity-0 z-0 scale-105 pointer-events-none'
+                }`}
               style={{ backgroundImage: `url(${slide.image})` }}
             >
               {/* Tinted Gradient Overlay */}
@@ -115,10 +114,9 @@ export default function Hero({ onSelectCategory }) {
 
               {/* Slide Content */}
               <div className="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-full z-20">
-                <div className={`max-w-2xl text-left space-y-4 md:space-y-6 transition-all duration-700 delay-300 transform ${
-                  isActive ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-                }`}>
-                  
+                <div className={`max-w-2xl text-left space-y-4 md:space-y-6 transition-all duration-700 delay-300 transform ${isActive ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                  }`}>
+
                   {/* Subtitle Badge */}
                   <div className="inline-flex items-center gap-2 rounded-full py-1.5 px-4 text-xs font-semibold uppercase tracking-wider bg-white/10 text-white border border-white/20 backdrop-blur-sm">
                     <span className="w-2 h-2 rounded-full bg-lotus-pink animate-pulse"></span>
@@ -147,7 +145,7 @@ export default function Hero({ onSelectCategory }) {
                     </a>
 
                     <a
-                      href="https://wa.me/919815493338?text=Hello%20Flower%20Studio!%20I%20am%20interested%20in%20fresh%20flower%20delivery%20in%20Chandigarh."
+                      href="https://wa.me/919335401435?text=Hello%20Flower%20Studio!%20I%20am%20interested%20in%20fresh%20flower%20delivery%20in%20Chandigarh."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/25 text-white font-bold py-3.5 px-6 rounded-full transition-all hover:scale-105 cursor-pointer text-xs md:text-sm backdrop-blur-sm"
@@ -169,9 +167,8 @@ export default function Hero({ onSelectCategory }) {
           <button
             key={idx}
             onClick={() => setCurrent(idx)}
-            className={`h-2.5 rounded-full transition-all duration-300 ${
-              idx === current ? 'bg-white w-7' : 'bg-white/40 hover:bg-white/60 w-2.5'
-            }`}
+            className={`h-2.5 rounded-full transition-all duration-300 ${idx === current ? 'bg-white w-7' : 'bg-white/40 hover:bg-white/60 w-2.5'
+              }`}
             aria-label={`Go to slide ${idx + 1}`}
           ></button>
         ))}
