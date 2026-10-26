@@ -1,0 +1,21 @@
+{
+  "name": "Flower Studio by Pushpraj",
+  "short_name": "Flower Studio",
+  "description": "Chandigarh's premier luxury florist, hampers, cakes, and gift delivery.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF9FA",
+  "theme_color": "#D84374",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

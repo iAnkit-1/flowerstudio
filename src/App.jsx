@@ -7,12 +7,13 @@ import CategoryProductsSection from './sections/CategoryProductsSection';
 import ProductsPage from './pages/ProductsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import DeliveryInfo from './sections/DeliveryInfo';
+import SeoWholesaleRetailSection from './sections/SeoWholesaleRetailSection';
 import Footer from './components/Footer';
 import GoldMembershipPopup from './components/GoldMembershipPopup';
 import AppDownloadModal from './components/AppDownloadModal';
 
 function MainContent({ cart, setCart, cartOpen, setCartOpen, appDownloadModalOpen, setAppDownloadModalOpen, selectedProductForDownload, setSelectedProductForDownload }) {
-  const { currentPage, selectedProductId } = useProductsContext();
+  const { currentPage, selectedProductId, navigateToPage } = useProductsContext();
   const [goldPopupOpen, setGoldPopupOpen] = useState(false);
 
   const handleOpenAppDownloadModal = (product = null) => {
@@ -125,6 +126,9 @@ function MainContent({ cart, setCart, cartOpen, setCartOpen, appDownloadModalOpe
 
             {/* Local Pincode checker & delivery metrics */}
             <DeliveryInfo />
+
+            {/* SEO Wholesale & Retail Overview + FAQs */}
+            <SeoWholesaleRetailSection onExploreProducts={() => navigateToPage('products')} />
           </>
         ) : currentPage === 'product-details' ? (
           /* Dedicated Product Details Page matching user reference */

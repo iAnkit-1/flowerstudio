@@ -1,0 +1,13 @@
+/* TEAM */
+Florist & Founder: Pushpraj
+Brand: Flower Studio by Pushpraj
+Location: Sco-52, Sector 29D, Chandigarh, 160030, India
+Contact: flowerstudiobypushpraj@gmail.com
+Phone: +91 98154 93338 / +91 98720 05054 / +91 93354 01435
+Website: https://flowerstudiobypushpraj.com
+
+/* SITE */
+Standards: HTML5, CSS3, ES2024, Schema.org JSON-LD, Sitemap 0.9, llms.txt RFC
+Components: React 19, Vite, Tailwind CSS, TanStack Query, Lucide Icons
+Software: Flower Studio Web & Mobile App Ecosystem
+Serving: Chandigarh, Mohali & Panchkula since 1985

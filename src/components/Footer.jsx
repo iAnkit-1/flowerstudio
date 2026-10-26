@@ -157,12 +157,44 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* SEO Popular Searches & Keyword Cloud */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-800/60 text-xs">
+        <p className="text-slate-400 font-semibold uppercase tracking-wider text-[11px] mb-3">
+          Popular Searches & Service Areas:
+        </p>
+        <div className="flex flex-wrap gap-2 text-slate-400 text-[11px] leading-relaxed">
+          <span className="hover:text-lotus-pink transition-colors">Best Flower Shop in Chandigarh</span>
+          <span className="text-slate-700">•</span>
+          <span className="hover:text-lotus-pink transition-colors">Best Florist in Mohali</span>
+          <span className="text-slate-700">•</span>
+          <span className="hover:text-lotus-pink transition-colors">Best Flower Shop in Panchkula</span>
+          <span className="text-slate-700">•</span>
+          <span className="hover:text-lotus-pink transition-colors">Wholesale Flower Market Chandigarh</span>
+          <span className="text-slate-700">•</span>
+          <span className="hover:text-lotus-pink transition-colors">Sector 29D Flower Mandi</span>
+          <span className="text-slate-700">•</span>
+          <span className="hover:text-lotus-pink transition-colors">Fresh Bouquets in Chandigarh</span>
+          <span className="text-slate-700">•</span>
+          <span className="hover:text-lotus-pink transition-colors">Online Flower Delivery Tricity</span>
+          <span className="text-slate-700">•</span>
+          <span className="hover:text-lotus-pink transition-colors">Luxury Gift Hampers Chandigarh</span>
+          <span className="text-slate-700">•</span>
+          <span className="hover:text-lotus-pink transition-colors">Bulk Flowers for Wedding Decorators</span>
+          <span className="text-slate-700">•</span>
+          <span className="hover:text-lotus-pink transition-colors">Loose Marigold Garlands Wholesale</span>
+          <span className="text-slate-700">•</span>
+          <span className="hover:text-lotus-pink transition-colors">Midnight Cake & Bouquet Delivery</span>
+          <span className="text-slate-700">•</span>
+          <span className="hover:text-lotus-pink transition-colors">Indoor Air-Purifying Gift Plants</span>
+        </div>
+      </div>
+
       {/* Footer Bottom copyright and developer credits */}
-      <div className="bg-slate-950/40 mt-12 py-6 border-t border-slate-800/80 text-xs text-slate-500">
+      <div className="bg-slate-950/40 mt-8 py-6 border-t border-slate-800/80 text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
           <p>© {new Date().getFullYear()} <span className="text-slate-400 font-semibold">Flower Studio</span>. All Rights Reserved.</p>
           <p className="text-[11px] text-slate-500/80">
-            Sco-52, Sector 29D, Chandigarh. Serving Chandigarh exclusively.
+            Sco-52, Sector 29D, Chandigarh. Serving Chandigarh, Mohali & Panchkula with Retail & Wholesale Floral Supply.
           </p>
         </div>
       </div>
